@@ -4,6 +4,7 @@ import 'package:sugar_wise/features/patient/booking_patient/booking_patient.dart
 import 'package:sugar_wise/features/patient/chat_patient/patient_chats_to_doctor/views/patient_chats_view.dart';
 import 'package:sugar_wise/features/patient/patient_home/views/widgets/custom_sidebar.dart';
 import 'package:sugar_wise/features/patient/patient_home/views/widgets/health_metric_card.dart';
+import 'package:sugar_wise/features/patient/patient_home/views/widgets/health_metric_view.dart';
 import 'package:sugar_wise/features/patient/patient_profile/view/profile_view.dart';
 import '../view_models/dashboard_view_model.dart';
 import 'patient_dashboard_view.dart';
@@ -23,7 +24,7 @@ class _PatientMainLayoutState extends State<PatientMainLayout> {
   final List<Widget> _pages = [
     const PatientDashboardView(),
     const BookingScreen(),
-    const HealthMetricView(),
+    const DietarySystemsView(),
     const PatientChatsView(),
     const ProfileView(),
     // const ProfileView(),

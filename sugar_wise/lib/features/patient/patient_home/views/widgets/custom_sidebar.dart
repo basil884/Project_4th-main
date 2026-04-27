@@ -3,6 +3,7 @@ import 'package:sugar_wise/features/auth/signin/views/login_view.dart';
 import 'package:sugar_wise/features/doctor/doctor_view_patient/view/doctor_view_patient.dart';
 import 'package:sugar_wise/features/patient/insulin_calculator_patient/view/insulin_calculator_patient.dart';
 import 'package:sugar_wise/features/patient/orders/view/orders_view.dart';
+import 'package:sugar_wise/features/patient/patient_home/views/widgets/health_metric_card.dart';
 import 'package:sugar_wise/features/patient/patient_profile/view/profile_view.dart';
 import 'package:sugar_wise/features/patient/patient_profile/view_models/profile_view_model.dart';
 import 'package:sugar_wise/features/patient/seetings/setting_screen.dart';
@@ -24,7 +25,7 @@ import 'package:sugar_wise/features/doctor/doctor_dashboard/view/widgets/faqs_vi
 
 class CustomSidebar extends StatelessWidget {
   CustomSidebar({super.key});
-  final ProfileViewModel profileViewModel = ProfileViewModel();
+  ProfileViewModel profileViewModel = ProfileViewModel();
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +60,12 @@ class CustomSidebar extends StatelessWidget {
               borderRadius: BorderRadius.only(topRight: Radius.circular(30)),
             ),
             child: GestureDetector(
-              onTap: () => Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileView()),
-              ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ProfileView()),
+                );
+              },
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -150,8 +153,19 @@ class CustomSidebar extends StatelessWidget {
                   ),
                   _buildDrawerItem(
                     context,
-                    Icons.shopping_bag_outlined,
-                    "Shop",
+                    Icons.shop,
+                    "Orders",
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const OrdersView(),
+                      ),
+                    ),
+                  ),
+                  _buildDrawerItem(
+                    context,
+                    Icons.shopping_bag,
+                    "shoop",
                     onTap: () => Navigator.push(
                       context,
                       MaterialPageRoute(

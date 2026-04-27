@@ -100,6 +100,7 @@ import 'package:sugar_wise/features/doctor/doctor_view_patient/view/doctor_view_
 import 'package:sugar_wise/features/patient/bluetooth_scanner/view/connect_sensor_view.dart';
 import 'package:sugar_wise/features/patient/patient_home/models/dashboard_card_model.dart';
 import 'package:sugar_wise/features/patient/patient_home/views/widgets/health_metric_card.dart';
+import 'package:sugar_wise/features/patient/patient_home/views/widgets/health_metric_view.dart';
 import '../view_models/dashboard_view_model.dart';
 import 'widgets/dashboard_header.dart';
 
@@ -269,7 +270,7 @@ class PatientDashboardView extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HealthMetricView(),
+                      builder: (context) => const DietarySystemsView(),
                     ),
                   );
                 },
